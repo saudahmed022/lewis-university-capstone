@@ -10,3 +10,9 @@ def home():
 @app.route("/about")
 def about():
     return render_template('about.html', title ="About")
+
+@app.route("/register")
+def register():
+    #Logic and steps
+
+    return render_template('register.html', title ="Register")
