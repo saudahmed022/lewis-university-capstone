@@ -1,6 +1,6 @@
 from flaskblog import app
 from flask import render_template, url_for, flash, redirect
-from forms import RegistrationForm
+from flaskblog.forms import RegistrationForm
 
 @app.route("/")
 @app.route("/home")
