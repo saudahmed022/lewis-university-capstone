@@ -99,5 +99,36 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
   
+  }
+  .regcover{
+    width: 90% ;
+    height: 25%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content-section{
+    align-items: center;
+    border: red;
+  }
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.column{
+  max-width: 50%;
+}
+@media screen and (max-width: 769px) {
+  .column{
+    max-width: 100%;
+  }
+}
