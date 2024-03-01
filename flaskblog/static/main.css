@@ -95,7 +95,7 @@ body {
     color: #C31F33;
   }
   .cover {
-    object-fit: cover;
+    object-fit: fill;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -114,16 +114,12 @@ body {
     border: red;
   }
   .form-group {
-    display: flex;
-    flex-wrap: wrap;
+
     justify-content: space-between;
-    max-width: 100%;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
+    max-width: 90%;
+  }
+
+
 .column{
   max-width: 50%;
 }
@@ -131,4 +127,11 @@ body {
   .column{
     max-width: 100%;
   }
+}
+
+.btn {
+  background-color: #ae2938;
+  border-color: #480b12;
+  color: #fff;
+  width: 30%
 }
