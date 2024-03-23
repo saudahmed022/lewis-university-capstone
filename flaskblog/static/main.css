@@ -1,8 +1,9 @@
 body {
-    background: #fafafa;
+    background: #480B12;
     color: #333333;
     margin-top: 8rem;
   }
+  
   
   h1, h2, h3, h4, h5, h6 {
     color: #444444;
@@ -13,30 +14,25 @@ body {
   }
   
   .navbar {
-    border-bottom: 5px solid #C31F33;
+    height: 60px;
   }
 
   .site-header .navbar-nav .nav-link {
     color: #C31F33;
-    font-family: "Sans Serif", sans-serif;
-    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
   }
   
   .site-header .navbar-nav .nav-link:hover {
-    color: #000000;
+    color: #480b12;
     font-weight: bold;
+    border-bottom: 2px solid #480b12;
+    
   }
   
   .site-header .navbar-nav .nav-link.active {
-    font-weight: 1500;
-  }
-  
-  .content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
+    color: #480b12;
+    border-bottom: 2px solid #480b12;
   }
   
   .article-title {
@@ -44,7 +40,7 @@ body {
   }
   
   a.article-title:hover {
-    color: #428bca;
+    color: #C31F33;
     text-decoration: none;
   }
   
@@ -53,8 +49,8 @@ body {
   }
   
   .article-img {
-    height: 65px;
-    width: 65px;
+    height: 70px;
+    width: 70px;
     margin-right: 16px;
   }
   
@@ -106,14 +102,7 @@ body {
     margin-right: auto;
   
   }
-  .regcover{
-    width: 90% ;
-    height: 25%;
-    object-fit: cover;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+
   .content-section{
     align-items: center;
     border: red;
@@ -139,4 +128,100 @@ body {
   border-color: #480b12;
   color: #fff;
   width: 30%
+}
+
+
+.custom-delete-btn {
+  width: 150px;
+}
+
+.image-container{
+  align-items: center;
+}
+
+.image-container {
+  height: 600px;
+  background-image: url('images/sidebar_img.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.account-content-section
+{
+  padding:30px;
+  background: #ffffff;
+  margin:auto;
+  width: 800px;
+  height: fit-content;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.content-section {
+  padding:30px;
+  background: #ffffff;
+  margin-bottom: 20px;
+  width: 800px;
+  height: 500px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.home-container
+{
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  width: 800px;
+}
+
+.create-post-content
+{
+  padding:30px;
+  background: #ffffff;
+  margin: auto;
+  width: 800px;
+  height: fit-content;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+[class^="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+
+.btn-primary:hover
+{
+  background-color:#480b12;
+}
+
+a:hover{
+  color: #480b12;
+}
+
+.flash-message-container {
+  margin-top: -70px; /* Adjust the margin-top value to position the flash message right below the navbar */ /* Add padding for spacing */
+  padding-left:0px;
+}
+
+.post-content-section
+{
+  padding: 30px;
+  background: #ffffff;
+  margin:auto;
+  width: fit-content;
+  min-width: 700px;
+  max-width: 1000px;
+  height: fit-content;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.show-account-title
+{
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  color: white
 }

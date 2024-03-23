@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="app.js"></script>
-    <link rel="icon" type="image/png" href="static\logo.png">
+    <link rel="icon" type="image\png" href="static\logo.png">
     {% if title %}
         <title>Lewis University Reddit- {{ title }}</title>
     {% else %}
@@ -17,71 +17,53 @@
     {% endif %}
 </head>
 <body>
-    <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-          <div class="container">
-            <a class="navbar-brand mr-4" href="/"><img src = "static\images\logo.png" class = "image-logo"></a>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" class="image-logo" style="height: 40px; width: 100px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarToggle">
-              <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link" href="/">Home</a>
-                <a class="nav-item nav-link" href="/about">About</a>
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="/">Home</a>
+                    <a class="nav-item nav-link" href="/about">About</a>
+                </div>
+                
+                <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                    {% if current_user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a>
+                    <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+                    <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    {% else %}
+                    <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                    <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+                    {% endif %}
+                </div>
             </div>
-            
-            <!-- Navbar Right Side -->
-            <div class="navbar-nav">
-              {% if current_user.is_authenticated %}
-                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
-                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
-              {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
-              {% endif %}
-            </div>
-            </div>
-          </div>
-        </nav>
-    </header>
-    <main role="main" class="container">
-        <div class="row">
-          <div class="col-md-8">
-            {% with messages = get_flashed_messages(with_categories=true)%}
-              {% if messages %}
-                {% for category, message in messages %}
-                  <div class ="alert alert-{{ category }}">
-                    {{ message }}
-                  </div>
-                {% endfor %}
-              {% endif %}
-            {% endwith %}
-            
-            {% block content %}{% endblock %}
-          </div>
-          <div class="col-md-4">
-            <div class="content-section">
-              <h3>Quick Links</h3>
-              <p class='text-muted'>Get quick access to important resources and information about Lewis University
-                <ul class="list-group">
-                  <li class="list-group-item list-group-item-light">
-                    <a href="https://www.lewisu.edu/index.htm" target="_blank">Lewis University</a>
-                  </li>
-                  <li class="list-group-item list-group-item-light">
-                    <a href="https://www.lewisu.edu/portals/currentportal.htm" target="_blank">Current Students</a>
-                  </li>
-                  <li class="list-group-item list-group-item-light">
-                    <a href="https://www.lewisu.edu/academics/academiccalendar.htm" target="_blank">Calendars</a>
-                  </li>
-                  <li class="list-group-item list-group-item-light">
-                    <a href="https://www.lewisu.edu/admissions/application.htm" target="_blank">Apply Now</a>
-                  </li>
-                </ul>
-              </p>
-            </div>
-          </div>
         </div>
-    </main>
+    </nav>
+</header>
+<div class = "flash-message-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible" class = "close" data-dismiss="alert">
+            {{ message }}
+            <div class = "close" data-dismiss="alert" aria-label="close">&times;</div>
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+<br>
+<br>
+<main role="main">
+
+        {% block content %}{% endblock %}
+
+</main>
 </body>
 </html>
