@@ -8,6 +8,13 @@ body {
   h1, h2, h3, h4, h5, h6 {
     color: #444444;
   }
+  .headingAbout{
+    color: white;
+    text-align: center;
+  }
+  .aboutP{
+    color: white;
+  }
   
   .bg-steel {
     background-color: #ffffff;
@@ -225,4 +232,10 @@ a:hover{
   font-family: 'Open Sans', sans-serif;
   color: white
 }
-
+.person-card {
+  height: 100%;
+}
+.person-image {
+  height: 300px;
+  object-fit: cover;
+}

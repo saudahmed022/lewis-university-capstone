@@ -41,7 +41,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + comment.author.image_file) }}" style="width:30px;height:30px ">
-                    <a href="/posts/{{comment.author.username}}">{{comment.author.username}}</a>: {{comment.text}}
+                    <a href="{{ url_for('user_posts', username=comment.author.username) }}">{{comment.author.username}}</a>: {{comment.text}}
                   </div>
                   <div>
                     <small class="text-muted">{{comment.date_created.strftime('%Y-%m-%d')}}</small>
